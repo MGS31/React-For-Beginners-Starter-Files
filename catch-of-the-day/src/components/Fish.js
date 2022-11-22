@@ -1,7 +1,19 @@
 import React from "react";
 import { formatPrice } from "../helpers";
+import propTypes from 'prop-types';
 
 class Fish extends React.Component {
+
+  static propTypes = {
+    details: propTypes.shape({
+      image: propTypes.string,
+      name: propTypes.string,
+      price: propTypes.number,
+      desc: propTypes.string,
+      status: propTypes.string
+    }),
+    addToOrder: propTypes.func,
+  }
 
     handleClick = () => {
         this.props.addToOrder(this.props.index);
